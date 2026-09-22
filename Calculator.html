@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color:lightyellow;
+            text-align: center;
+        }    
+    </style>
+</head>
+<body>
+
+    <h2>Simple Calculator</h2>
+<h3>Enter a value:<input type="number" id="a"></h3>
+<h3>Enter b value:<input type="number" id="b"></h3>
+<h3>Enter operation:<input type="text" id="operation"></h3>
+
+<button onclick="calculate()">Run</button>
+<h3 id=result></h3>
+
+    <script>
+        function calculate() {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            let op = document.getElementById("operation").value;
+
+            let result;
+            
+            if (op == "+") {
+                result = a + b;
+            }
+            else if (op == "-") {
+                result = a - b;
+            }
+            else if (op == "*") {
+                result = a * b;
+            }
+            else if (op == "/") {
+                result = a / b;
+            }
+
+            else {
+                result="invalid operation";
+            }
+             document.getElementById("result").innerHTML =
+                "Result = " + result;
+        }
+    </script>
+
+</body>
+</html>
